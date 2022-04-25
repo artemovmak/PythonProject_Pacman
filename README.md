@@ -1,2 +1,7 @@
-# PythonProject_Pacman
-First Review
+# Pacman
+## Project installation
+1) Создать папку с проектом
+2) Открыть в GIT BASH эту папку
+3) Сделать клонирование репозитория
+4) Установить нужные версии пакетов `sudo pip3 install pygame`
+5) Запустить `Main.py` для начала игры
