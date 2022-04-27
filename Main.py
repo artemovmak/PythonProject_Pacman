@@ -63,7 +63,7 @@ END_MUSIC = pg.mixer.Sound(END_SOUND)
 ##########################################################################
 
 
-where_kursor = 0
+where_cursor = 0
 MENU_RUNNING = True
 
 aqua = (0, 255, 255)   # морская волна
@@ -313,20 +313,20 @@ while MAIN_RUNNING:
                 MENU_RUNNING = False
             elif event.type == pg.KEYDOWN:
                 if event.key == pg.K_UP:
-                    where_kursor = (where_kursor - 1) % 3
+                    where_cursor = (where_cursor - 1) % 3
                 elif event.key == pg.K_DOWN:
-                    where_kursor = (where_kursor + 1) % 3
+                    where_cursor = (where_cursor + 1) % 3
                 elif event.key == pg.K_ESCAPE:
                     MAIN_RUNNING = False
                     MENU_RUNNING = False
                 elif event.key == ord('\r'):
-                    if where_kursor == 0:
+                    if where_cursor == 0:
                         GAME_RUNNING = True
                         MENU_RUNNING = False
-                    elif where_kursor == 1:
+                    elif where_cursor == 1:
                         BOARD_RUNNING = True
                         MENU_RUNNING = False
-                    elif where_kursor == 2:
+                    elif where_cursor == 2:
                         MAIN_RUNNING = False
                         MENU_RUNNING = False
 
@@ -340,21 +340,21 @@ while MAIN_RUNNING:
             RESOLUTION[0] //
             2,
             280,
-            yellow if abs(where_kursor) != 0 else aqua).draw()
+            yellow if abs(where_cursor) != 0 else aqua).draw()
         text(
             MENU_FONT,
             65,
             'Score Board',
             RESOLUTION[0] // 2,
             460,
-            yellow if abs(where_kursor) != 1 else aqua).draw()
+            yellow if abs(where_cursor) != 1 else aqua).draw()
         text(
             MENU_FONT,
             80,
             'Exit',
             RESOLUTION[0] // 2,
             700,
-            blue if abs(where_kursor) != 2 else red).draw()
+            blue if abs(where_cursor) != 2 else red).draw()
 
         # Рисунок появится после обновления экрана
         pg.display.flip()
@@ -374,7 +374,6 @@ while MAIN_RUNNING:
                 if event.key == ord('\r'):
                     MENU_RUNNING = True
                     BOARD_RUNNING = False
-        # Тут можно рисовать
         screen.fill(black)
 
         text(MENU_FONT, 80, 'Olymp:', RESOLUTION[0] // 2, 80, blue).draw()
