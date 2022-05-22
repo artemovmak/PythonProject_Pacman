@@ -1,5 +1,5 @@
 import pygame as pg
-from Constants import RESOLUTION, MENU_FONT
+from data.Constants import RESOLUTION, MENU_FONT
 
 pg.init()
 
@@ -40,10 +40,10 @@ class text:
 
 
 # Установить заголовок окна
-bl = True
+open_window = True
 # Основной цикл программы
 
-while bl:
+while open_window:
     # Тут можно рисовать
     screen.fill(black)
     text(MENU_FONT, 80, 'SwiftTeam', RESOLUTION[0] // 2, 80, yellow).draw()
@@ -62,14 +62,12 @@ while bl:
     for event in pg.event.get():
         # Реагируем на действия пользователя
         if event.type == pg.QUIT:
-            bl = False
+            open_window = False
         elif event.type == pg.KEYDOWN:
             if event.key == ord('\r'):
-                import Main
-                bl = False
+                open_window = False
             elif event.key == pg.K_ESCAPE:
-                bl = False
+                open_window = False
 
     clock.tick(30)
 
-print("See you next time!")

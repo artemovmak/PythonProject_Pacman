@@ -1,8 +1,8 @@
 import pygame as pg
 
-from Constants import RESOLUTION
-from MovingEntity import MovingEntity
-from VecFunctions import *
+from data.Constants import *
+from data.MovingEntity import *
+from data.VecFunctions import *
 
 
 class Ghost(MovingEntity):
@@ -16,20 +16,20 @@ class Ghost(MovingEntity):
         self.target_dot = (0, 0)
         if entity == 0:
             self.imgs_arr = [
-                pg.image.load('sprites/pink.png'),
-                pg.image.load('sprites/pink1.png')]
+                pg.image.load('../PythonProject_Pacman/sprites/pink.png'),
+                pg.image.load('../PythonProject_Pacman/sprites/pink1.png')]
         elif entity == 1:
             self.imgs_arr = [
-                pg.image.load('sprites/red.png'),
-                pg.image.load('sprites/red1.png')]
+                pg.image.load('../PythonProject_Pacman/sprites/red.png'),
+                pg.image.load('../PythonProject_Pacman/sprites/red1.png')]
         elif entity == 2:
             self.imgs_arr = [
-                pg.image.load('sprites/yellow.png'),
-                pg.image.load('sprites/yellow1.png')]
+                pg.image.load('../PythonProject_Pacman/sprites/yellow.png'),
+                pg.image.load('../PythonProject_Pacman/sprites/yellow1.png')]
         else:
             self.imgs_arr = [
-                pg.image.load('sprites/tur.png'),
-                pg.image.load('sprites/tur1.png')]
+                pg.image.load('../PythonProject_Pacman/sprites/tur.png'),
+                pg.image.load('../PythonProject_Pacman/sprites/tur1.png')]
 
         for i in range(0, len(self.imgs_arr)):
             self.imgs_arr[i] = pg.transform.scale(
@@ -37,10 +37,10 @@ class Ghost(MovingEntity):
         self.img_original_arr = self.imgs_arr
 
         self.eyes_arr = [
-            pg.image.load("sprites/eyesLR.png"),
-            pg.image.load("sprites/eyesUD.png"),
-            pg.image.load("sprites/eyesLR.png"),
-            pg.image.load("sprites/eyesUD.png")]
+            pg.image.load("../PythonProject_Pacman/sprites/eyesLR.png"),
+            pg.image.load("../PythonProject_Pacman/sprites/eyesUD.png"),
+            pg.image.load("../PythonProject_Pacman/sprites/eyesLR.png"),
+            pg.image.load("../PythonProject_Pacman/sprites/eyesUD.png")]
         self.eyes_arr[1] = pg.transform.flip(self.eyes_arr[1], False, True)
         self.eyes_arr[2] = pg.transform.flip(self.eyes_arr[2], True, False)
         for i in range(0, len(self.eyes_arr)):

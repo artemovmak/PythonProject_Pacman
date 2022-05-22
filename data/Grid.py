@@ -1,7 +1,7 @@
 import pygame as pg
 
-from Constants import BLOCK_SIZE, SEED_SIZE, SEED_COLOR, WHITE, PILL_RADIUS
-from GameObject import GameObject
+from data.Constants import BLOCK_SIZE, SEED_SIZE, SEED_COLOR, WHITE, PILL_RADIUS
+from data.GameObject import GameObject
 
 
 class Grid(GameObject):

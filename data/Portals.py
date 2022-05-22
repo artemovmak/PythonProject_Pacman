@@ -1,6 +1,5 @@
-import pygame as pg
-from Constants import BLOCK_SIZE
-from GameObject import GameObject
+from data.Constants import BLOCK_SIZE
+from data.GameObject import GameObject
 from math import floor
 
 

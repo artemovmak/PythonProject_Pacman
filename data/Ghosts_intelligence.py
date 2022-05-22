@@ -1,6 +1,6 @@
-from Ghost import Ghost
-from Pacman import Pacman
-from VecFunctions import *
+from data.Ghost import Ghost
+from data.Pacman import Pacman
+from data.VecFunctions import *
 
 
 class RedGhost(Ghost):

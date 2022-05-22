@@ -2,9 +2,9 @@ from math import floor
 
 import pygame as pg
 
-from Constants import BLOCK_SIZE, RESOLUTION
-from GameObject import GameObject
-from Wall import Wall
+from data.Constants import BLOCK_SIZE, RESOLUTION
+from data.GameObject import *
+from data.Wall import *
 
 
 class MovingEntity(GameObject):

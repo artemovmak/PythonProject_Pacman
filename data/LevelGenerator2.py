@@ -8,7 +8,7 @@ a = []
 # | 105
 
 
-def shablon_draw(gen_map):
+def shape_draw(gen_map):
     if gen_map == 0:
         a.append([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
@@ -104,7 +104,7 @@ for i in range(map_size // 4):
         generate.append(6)
     generate.append(random.randint(0, 5))
 for i in generate:
-    shablon_draw(i)
+    shape_draw(i)
 draw_true_wall()
 
 with open('map.txt', 'w+') as out:

@@ -1,4 +1,4 @@
-from Grid import Grid
+from data.Grid import Grid
 
 
 class Wall(Grid):

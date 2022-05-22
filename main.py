@@ -1,13 +1,12 @@
 import pygame as pg
-from Constants import *
-from Wall import Wall
-from Grid import Grid
+from data.Wall import Wall
+from data.Grid import Grid
 from sys import exit
-from Pacman import Pacman
+from data.Constants import *
 import copy
-from Ghosts_intelligence import *
+from data.Ghosts_intelligence import *
 from time import sleep
-from Portals import Portal
+from data.Portals import Portal
 
 pg.init()
 screen = pg.display.set_mode(RESOLUTION)
@@ -60,9 +59,6 @@ START_MUSIC = pg.mixer.Sound(START_SOUND)
 END_MUSIC = pg.mixer.Sound(END_SOUND)
 
 
-##########################################################################
-
-
 where_cursor = 0
 MENU_RUNNING = True
 
@@ -98,26 +94,20 @@ class text:
 
 # Установить заголовок окна
 pg.display.set_caption("Pacman the best game")
-
-
-##########################################################################
 name = []
-
-
 # Установить заголовок окна
 bl = True
 # Основной цикл программы
-with open('board.txt', 'r') as board:
+with open('data/board.txt', 'r') as board:
     name.append(board.readline())
     name.append(board.readline())
     name.append(board.readline())
 
-with open('board.txt', 'w') as board:
+with open('data/board.txt', 'w') as board:
     board.write(name[0])
     board.write(name[1])
     board.write(name[2])
 
-##########################################################################
 
 waka_sound = pg.mixer.Sound(WAKA_SOUND)
 Lives = PACMAN_MAX_LIVES
@@ -126,7 +116,7 @@ while MAIN_RUNNING:
 
         if TICK == 0:
             if Lives == PACMAN_MAX_LIVES:
-                map = GetMatrixFromFile("map.txt")
+                map = GetMatrixFromFile("data/map.txt")
                 arr = copy.deepcopy(map)
                 arr = FillMatrix(arr)
 
@@ -216,7 +206,6 @@ while MAIN_RUNNING:
                 for i in range(1, 18):
                     pacman.death(i, arr, ghosts, screen, PACMAN_SIZE)
                 sleep(0.5)
-                print(Lives)
                 Lives -= 1
                 TICK = -1
                 continue
@@ -270,7 +259,6 @@ while MAIN_RUNNING:
         if pacman.eat(arr):
             waka_sound.play()
             Score += 100
-            print(Score)
 
         for i in arr:
             for j in i:

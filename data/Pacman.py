@@ -1,7 +1,7 @@
 import pygame as pg
 
-from Constants import RESOLUTION, BLOCK_SIZE
-from MovingEntity import MovingEntity
+from data.Constants import RESOLUTION, BLOCK_SIZE
+from data.MovingEntity import MovingEntity
 from time import sleep
 from pygame.transform import scale
 
@@ -13,10 +13,10 @@ class Pacman(MovingEntity):
         self.collidable = True
 
         self.imgs_arr = [
-            pg.image.load('sprites/open.png'),
-            pg.image.load('sprites/half.png'),
-            pg.image.load('sprites/little.png'),
-            pg.image.load('sprites/closed.png')]
+            pg.image.load('../PythonProject_Pacman/sprites/open.png'),
+            pg.image.load('../PythonProject_Pacman/sprites/half.png'),
+            pg.image.load('../PythonProject_Pacman/sprites/little.png'),
+            pg.image.load('../PythonProject_Pacman/sprites/closed.png')]
         for i in range(0, len(self.imgs_arr)):
             self.imgs_arr[i] = pg.transform.scale(
                 self.imgs_arr[i], (width, height))
